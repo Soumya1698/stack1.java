@@ -1,0 +1,95 @@
+Q) The program should print true for exp =('{','(',')','}','[',']')and false for exp = “[(])” 
+// This question is taken from geeksforgeeks 
+
+program:
+import java.util.Stack;   // This preprocessor directive contains the complete stack class, it is not te be defined futher-on. 
+import java.util.Scanner; // This can be used if the input is given from the keyword. 
+
+public class checkpara
+{
+//defining stack class
+static class stack
+{
+int top=-1; //top is taken -1 here bc the stack starts from 0,to 99 (stack is created with 100 spaces)
+Stack<Char> st= new Stack<Char>[100]; // <> is to be defined when java.util.Stack is imported.
+                                      
+                                      // There are 4 methods that can be instantiated with this class of stack
+                                     
+void push(char x)
+{
+if(top==99)
+System.out.println(" stack is full"); 
+else
+st[++top]=x;
+}
+char pop()
+{
+if(top==-1)
+System.out.println("stack underflow");
+return \0;
+else
+char element= st[top];
+top--;
+return element;
+}
+boolean isEmpty()
+{
+return (top==-1) ? true : false;
+}
+}
+static boolean match(char c1, char c2)
+{
+if(c1=='(' && c2==')')
+return true;
+else if(c1=='{' && c2=='}')
+return true;
+else if(c1=='[' && c2==']')
+return true;
+else 
+return false;
+}
+static boolean matched(char exp[])
+{
+stack s = new stack();
+for(int i=0; i<exp.length;i++)
+{
+if(exp[i]=='{' || exp[i]=='(' || exp[i]=='[')
+s.push(exp[i]);
+if(exp[i]=='}' || exp[i]==')' || exp[i]==']')
+{
+if(s.isEmpty())
+return false;
+else if(! match( s.pop(), exp[i])
+return false;
+}
+}
+if(s.isEmpty())
+return true;
+else
+return false;
+}
+
+public static void main(String[] args)
+{
+ char exp[] = {'{','(',')','}','[',']'}; 
+  if (areParenthesisBalanced(exp)) 
+  System.out.println("Balanced "); 
+else
+ System.out.println("Not Balanced ");
+}
+}
+
+
+output: Balanced
+            
+
+
+
+
+
+
+
+
+
+
+
