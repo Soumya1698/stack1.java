@@ -11,9 +11,9 @@ public class checkpara
 static class stack
 {
 int top=-1; //top is taken -1 here bc the stack starts from 0,to 99 (stack is created with 100 spaces)
-Stack<Char> st= new Stack<Char>[100]; // <> is to be defined when java.util.Stack is imported.
+char[] st= new Char[100];
                                       
-                                      // There are 4 methods that can be instantiated with this class of stack
+// There are 4 methods that can be instantiated with this class of stack
                                      
 void push(char x)
 {
