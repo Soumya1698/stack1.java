@@ -33,11 +33,13 @@ class MergeSort
 
 			while(i<=mid)
 				{
-				temp[i++]=a[i++];
+				temp[i]=a[i];
+				i++;
 				}
 			while(j<=r)
 				{
-				temp[j++]=a[j++];
+				temp[j]=a[j];
+				j++;
 				}
 
 			for(int x=l;x<=r;x++)
@@ -61,6 +63,11 @@ class MergeSort
 			publicArray(a);
 		}
  }
+
+//This still has an unresolved error. 
+[ sorted Array:
+ [I@15db9742 [I@15db9742 [I@15db9742 [I@15db9742  ]
+
 
 
 
